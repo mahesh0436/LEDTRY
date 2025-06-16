@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><title>LED Control</title></head>
+<body>
+  <h2>Control LED</h2>
+  <button onclick="updateSheet(1)">LED ON</button>
+  <button onclick="updateSheet(0)">LED OFF</button>
+
+  <script>
+    function updateSheet(value) {
+      fetch("YOUR_https://script.google.com/macros/s/AKfycby0fZpi-NFCo7xquhvEwByQvj6hzTP-0y_6Yex3DQuWRVCmKaQfVB_V3SafLSfagiwzUg/exec", {
+        method: 'POST',
+        body: JSON.stringify({ led: value }),
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+  </script>
+</body>
+</html>
