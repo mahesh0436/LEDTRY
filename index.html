@@ -8,8 +8,8 @@
 
   <script>
     function updateSheet(value) {
-      fetch("https://script.google.com/macros/s/AKfycbzMQFN_Ayz1UNAhKg6ui_paakUyy5eghXRINk3uuAIGnvK6OPPw5T1cfzJWN1uHbvHg/exec", {
-        method: 'POST',
+      fetch("https://script.google.com/macros/s/AKfycbzTbH_6Sxy3Ck0ENGcqfQUX9cqrDdw09CTv8ODfQZ4KSz8Bd5dhMCNLE7lZnDEpneQ/exec", {
+       method: 'POST',
         body: JSON.stringify({ led: value }),
         headers: { "Content-Type": "application/json" }
       });
