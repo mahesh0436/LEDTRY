@@ -2,17 +2,17 @@
 <html>
 <head><title>LED Control</title></head>
 <body>
-  <h2>Control LED</h2>
-  <button onclick="updateSheet(1)">LED ON</button>
-  <button onclick="updateSheet(0)">LED OFF</button>
+  <h2>LED1 Control</h2>
+  <button onclick="updateLED(1)">Turn ON</button>
+  <button onclick="updateLED(0)">Turn OFF</button>
 
   <script>
-    function updateSheet(value) {
-      fetch("https://script.google.com/macros/s/AKfycbzTbH_6Sxy3Ck0ENGcqfQUX9cqrDdw09CTv8ODfQZ4KSz8Bd5dhMCNLE7lZnDEpneQ/exec", {
-       method: 'POST',
-        body: JSON.stringify({ led: value }),
-        headers: { "Content-Type": "application/json" }
-      });
+    function updateLED(state) {
+      const url = "https://script.google.com/macros/s/AKfycbxM9ZMdJWE1NdplQMEjDA96BI9EIbH_fIUSyVvz7c5pILeJ1aDH9eV-eiTTiCgntNCQCQ/exec"; // replace with real URL
+      fetch(`${url}?button=LED1&state=${state}`, { method: 'POST' })
+        .then(res => res.text())
+        .then(data => alert("Sheet updated: " + data))
+        .catch(err => alert("Error: " + err));
     }
   </script>
 </body>
